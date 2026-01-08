@@ -4,19 +4,19 @@ export const Clients: React.FC = () => {
   const clients = [
     { 
       name: "The Orb", 
-      logo: "https://ucarecdn.com/15394236-0294-4b5b-8067-1563f86e570f/" 
+      logo: "/logos/the-orb.png" 
     },
     { 
       name: "Tu Mente En Línea", 
-      logo: "https://ucarecdn.com/f02e1c0c-a114-419b-a626-4444a7f0e698/" 
+      logo: "/logos/tu-mente-en-linea.png" 
     },
     { 
       name: "Wide Knowledge", 
-      logo: "https://ucarecdn.com/393b48f9-4679-450f-a727-4c07c1b52a55/" 
+      logo: "/logos/wide-knowledge.png" 
     },
     { 
       name: "Hihn Leandro", 
-      logo: "https://ucarecdn.com/b2828b03-5165-4f35-8025-5020c2944b02/" 
+      logo: "/logos/hihn-leandro.png" 
     },
     { 
       name: "Atenas", 
@@ -28,7 +28,7 @@ export const Clients: React.FC = () => {
     },
     {
       name: "Fuegos",
-      logo: "https://ucarecdn.com/9a066503-451e-4364-8832-601c0c528574/" 
+      logo: "/logos/fuegos.png" 
     },
     {
       name: "HBH Sportswear",
