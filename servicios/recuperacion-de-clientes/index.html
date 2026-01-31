@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Clientes | VectorAI</title>
+    <meta name="description"
+        content="Servicio de reactivación de clientes inactivos con Inteligencia Artificial. Ideal para clínicas, talleres y centros de bienestar.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans text-slate-900 antialiased bg-white selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold">V
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">VectorAI</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-sm font-medium text-slate-600 hover:text-brand-600">Inicio</a>
+                    <a href="/servicios/recuperacion-de-clientes/"
+                        class="text-sm font-medium text-brand-600">Servicios</a>
+                    <a href="#contacto"
+                        class="px-5 py-2.5 bg-brand-600 text-white font-medium rounded-full hover:bg-brand-700 transition shadow-lg shadow-brand-500/20 text-sm">
+                        Agendar Consultoría
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-brand-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-brand-800 text-sm font-semibold mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+                </span>
+                Sistema Automatizado de Retención
+            </div>
+            <h1
+                class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-8 max-w-4xl mx-auto leading-tight">
+                Convierte tu base de datos inactiva en <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600">Ingresos
+                    Recurrentes</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Utilizamos Inteligencia Artificial para reactivar automáticamente a los clientes que no han vuelto a tu
+                negocio en 6, 12 o 18 meses.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#sectores"
+                    class="px-8 py-4 bg-brand-600 text-white font-bold rounded-full hover:bg-brand-700 transition shadow-xl shadow-brand-500/20">
+                    Ver Sectores Especializados
+                </a>
+                <a href="#como-funciona"
+                    class="px-8 py-4 bg-white text-slate-700 font-semibold border border-slate-200 rounded-full hover:bg-slate-50 transition">
+                    Cómo funciona
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="como-funciona" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Recuperación inteligente en 3 pasos</h2>
+                <p class="mt-4 text-slate-600">Sin llamadas en frío. Sin esfuerzo manual de tu equipo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div
+                        class="w-16 h-16 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mx-auto mb-6 text-2xl font-bold">
+                        1</div>
+                    <h3 class="text-xl font-bold mb-3">Conexión de Datos</h3>
+                    <p class="text-slate-600">Nos conectamos a tu CRM o base de datos para identificar patrones de
+                        inactividad.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div
+                        class="w-16 h-16 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mx-auto mb-6 text-2xl font-bold">
+                        2</div>
+                    <h3 class="text-xl font-bold mb-3">Activación IA</h3>
+                    <p class="text-slate-600">Nuestros agentes de IA contactan por WhatsApp/SMS con mensajes
+                        híper-personalizados.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-2xl border border-slate-100">
+                    <div
+                        class="w-16 h-16 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600 mx-auto mb-6 text-2xl font-bold">
+                        3</div>
+                    <h3 class="text-xl font-bold mb-3">Conversión</h3>
+                    <p class="text-slate-600">El cliente agenda su cita directamente en tu calendario y vuelve a tu
+                        negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectors Grid -->
+    <section id="sectores" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Sectores Especializados</h2>
+                <p class="mt-4 text-slate-600">Hemos adaptado nuestro sistema a las necesidades específicas de cada
+                    industria.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Veterinarias -->
+                <a href="/recuperacion-de-clientes-veterinarias/"
+                    class="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-500 transition-all hover:shadow-xl hover:shadow-brand-500/10 cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">
+                        Veterinarias</h3>
+                    <p class="text-slate-600 text-sm">Recupera mascotas que necesitan vacunas y revisiones anuales.</p>
+                    <span
+                        class="mt-4 inline-block text-sm font-semibold text-brand-600 underline decoration-2 underline-offset-2">Ver
+                        solución veterinaria &rarr;</span>
+                </a>
+
+                <!-- Clínicas Dentales -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-300 transition-all cursor-pointer">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Clínicas Dentales</h3>
+                    <p class="text-slate-600 text-sm">Recordatorios de limpiezas semestrales y revisiones periódicas.
+                    </p>
+                </div>
+
+                <!-- Clínicas Estéticas -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-300 transition-all cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Clínicas Estéticas</h3>
+                    <p class="text-slate-600 text-sm">Reactiva pacientes para mantenimiento de tratamientos y nuevos
+                        servicios.</p>
+                </div>
+
+                <!-- Talleres -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-300 transition-all cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Talleres Mecánicos</h3>
+                    <p class="text-slate-600 text-sm">Avisos de ITV, cambios de aceite y mantenimiento preventivo.</p>
+                </div>
+
+                <!-- Wellness/Fitness -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-300 transition-all cursor-pointer">
+                    <div class="w-14 h-14 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Wellness / Fitness</h3>
+                    <p class="text-slate-600 text-sm">Recupera socios que dejaron de ir al gimnasio o centro de yoga.
+                    </p>
+                </div>
+
+                <!-- Ópticas -->
+                <div
+                    class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-brand-300 transition-all cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Ópticas</h3>
+                    <p class="text-slate-600 text-sm">Revisiones de la vista y renovación de lentillas.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold">
+                            V</div>
+                        <span class="font-bold text-xl text-white">VectorAI</span>
+                    </div>
+                    <p class="text-sm max-w-sm">Agencia de Automatización e IA. Ayudamos a empresas a escalar
+                        operaciones y ventas con sistemas inteligentes.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Sectores</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/recuperacion-de-clientes-veterinarias/" class="hover:text-white">Veterinarias</a>
+                        </li>
+                        <li><span class="text-slate-600">Clínicas Dentales</span></li>
+                        <li><span class="text-slate-600">Talleres</span></li>
+                        <li><span class="text-slate-600">Ópticas</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contacto</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>info@vectorai.com</li>
+                        <li>+34 677 19 64 25</li>
+                        <li>Barcelona, España</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-8 border-t border-slate-800 text-xs">
+                &copy; 2026 VectorAI. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
