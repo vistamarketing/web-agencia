@@ -2,7 +2,6 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Clients } from './components/Clients';
-import { TechStack } from './components/TechStack';
 import { Services } from './components/Services';
 import { Sectors } from './components/Sectors';
 import { CaseStudies } from './components/CaseStudies';
@@ -17,8 +16,7 @@ function App() {
       <main>
         <Hero />
         <Clients />
-        <TechStack />
-        <Services />
+<Services />
         <Sectors />
         <CaseStudies />
         <Testimonials />

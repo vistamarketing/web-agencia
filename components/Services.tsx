@@ -1,27 +1,29 @@
 import React from 'react';
-import { Bot, Globe, LayoutDashboard, Workflow, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Bot, Globe, LayoutDashboard, Workflow, CheckCircle2, ArrowRight, Gift, TrendingUp } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
   {
     title: "Webs con IA Integrada",
-    description: "No solo diseñamos webs bonitas. Creamos activos digitales que capturan leads, entienden a tu usuario y adaptan el contenido en tiempo real.",
+    description: "No solo diseñamos webs bonitas. Creamos activos digitales que atraen clientes, entienden a tu usuario y adaptan el contenido en tiempo real.",
     icon: Globe,
+    href: "/servicios/webs-con-ia/",
     features: [
-      "Chatbots entrenados con tu data",
+      "Chatbots entrenados con tu información",
       "Personalización de contenido dinámica",
       "SEO Técnico automatizado",
-      "Lead Magnets interactivos"
+      "Recursos de alto valor interactivos"
     ]
   },
   {
     title: "Sistemas de Ventas",
     description: "Automatiza la prospección y el cierre. Transformamos curiosos en clientes mediante embudos inteligentes que funcionan 24/7.",
     icon: LayoutDashboard,
+    href: "/servicios/sistemas-de-ventas/",
     features: [
-      "Calificación de leads (Lead Scoring)",
+      "Calificación automática de contactos",
       "Seguimiento por Email & WhatsApp",
-      "CRM automatizado (GoHighLevel)",
+      "CRM automatizado",
       "Recuperación de carritos con IA"
     ]
   },
@@ -29,22 +31,48 @@ const services: ServiceItem[] = [
     title: "Atención al Cliente AI",
     description: "Ofrece soporte instantáneo y humano sin aumentar tu plantilla. Resolvemos el 80% de las dudas automáticamente.",
     icon: Bot,
+    href: "/servicios/atencion-al-cliente-ai/",
     features: [
       "Respuestas instantáneas 24/7",
       "Agendamiento de citas automático",
-      "Integración con Gemini & Claude",
+      "Modelos de IA avanzados integrados",
       "Escalado a humano inteligente"
     ]
   },
   {
     title: "Automatización de Procesos",
-    description: "Conectamos tus herramientas (n8n) para eliminar el trabajo manual repetitivo y reducir errores operativos.",
+    description: "Conectamos tus herramientas para eliminar el trabajo manual repetitivo y reducir errores operativos.",
     icon: Workflow,
+    href: "/servicios/automatizacion-de-procesos/",
     features: [
       "Sincronización de bases de datos",
       "Generación de reportes automáticos",
       "Onboarding de clientes",
       "Gestión de facturación automática"
+    ]
+  },
+  {
+    title: "Programas de Fidelización",
+    description: "Convierte clientes puntuales en clientes de por vida. Diseñamos sistemas automatizados que mantienen tu marca presente y aumentan el valor medio por cliente.",
+    icon: Gift,
+    href: "/servicios/programas-de-fidelizacion/",
+    features: [
+      "Flujos de reactivación de clientes inactivos",
+      "Campañas de aniversario y cumpleaños",
+      "Encuestas NPS y seguimiento de satisfacción",
+      "Programas de referidos automatizados"
+    ]
+  },
+  {
+    title: "Ecommerce Growth",
+    description: "Maximizamos el rendimiento de tu tienda online con sistemas inteligentes que aumentan la conversión, el ticket medio y la repetición de compra.",
+    icon: TrendingUp,
+    href: "/servicios/ecommerce-growth/",
+    features: [
+      "Recuperación de carritos abandonados",
+      "Email marketing hiper-personalizado",
+      "Upselling y cross-selling automático",
+      "Análisis de comportamiento de compra"
     ]
   },
 ];
@@ -74,16 +102,16 @@ export const Services: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {services.map((service, idx) => (
-            <div 
-              key={idx} 
-              className="group relative bg-white rounded-[2rem] border border-slate-100 p-8 md:p-10 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+            <div
+              key={idx}
+              className="group relative bg-white rounded-xl border border-slate-100 p-8 md:p-10 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
             >
               {/* Hover Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
               <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-brand-600 rounded-2xl flex items-center justify-center mb-8 text-white shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-brand-600 rounded-xl flex items-center justify-center mb-8 text-white shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
                   <service.icon size={32} strokeWidth={1.5} />
                 </div>
 
@@ -106,10 +134,10 @@ export const Services: React.FC = () => {
                 </ul>
 
                 {/* Card Action */}
-                <div className="flex items-center text-brand-600 font-semibold group/btn cursor-pointer">
+                <a href={service.href ?? '#servicios'} className="flex items-center text-brand-600 font-semibold group/btn">
                   <span className="mr-2">Saber más</span>
                   <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                </div>
+                </a>
               </div>
             </div>
           ))}

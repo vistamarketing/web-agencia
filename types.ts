@@ -4,6 +4,7 @@ export interface ServiceItem {
   title: string;
   description: string;
   icon: LucideIcon;
+  href?: string;
   features?: string[];
 }
 
@@ -25,4 +26,5 @@ export interface SectorItem {
   title: string;
   description: string;
   icon: LucideIcon;
+  href?: string;
 }

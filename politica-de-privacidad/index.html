@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Vista Consulting</title>
+  <meta name="description" content="Política de Privacidad de Vista Consulting. Información sobre cómo tratamos tus datos personales." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#ecf8ff',
+              100: '#d5eeff',
+              400: '#48b8ff',
+              500: '#1d96ff',
+              600: '#0675ff',
+              700: '#005ef6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-white text-slate-900 font-sans">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="bg-brand-600 text-white p-1.5 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/>
+            <line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/>
+            <line x1="12" y1="22" x2="12" y2="18"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-slate-900">Vista Consulting</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">
+            Servicios
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200 group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 hidden group-hover:block z-10">
+            <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-3 w-64">
+              <a href="/servicios/webs-con-ia/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Webs con IA Integrada</a>
+              <a href="/servicios/sistemas-de-ventas/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Sistemas de Ventas</a>
+              <a href="/servicios/atencion-al-cliente-ai/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Atención al Cliente AI</a>
+              <a href="/servicios/automatizacion-de-procesos/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Automatización de Procesos</a>
+              <a href="/servicios/programas-de-fidelizacion/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Programas de Fidelización</a>
+              <a href="/servicios/ecommerce-growth/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Ecommerce Growth</a>
+            </div>
+          </div>
+        </div>
+        <a href="/#sectores" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Sectores</a>
+        <a href="/#casos" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Casos de Éxito</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <a href="/reservar/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5">
+          Agendar Llamada
+        </a>
+      </div>
+
+      <!-- Mobile burger -->
+      <button id="burger-btn" class="md:hidden p-2 text-slate-600" aria-label="Menú">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl">
+      <nav class="flex flex-col gap-2">
+        <button id="mobile-services-btn" class="flex items-center justify-between w-full text-base font-medium text-slate-700 hover:text-brand-600 py-1">
+          Servicios
+          <svg id="services-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="mobile-services-list" class="hidden pl-4 pb-1">
+          <a href="/servicios/webs-con-ia/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Webs con IA Integrada</a>
+          <a href="/servicios/sistemas-de-ventas/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Sistemas de Ventas</a>
+          <a href="/servicios/atencion-al-cliente-ai/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Atención al Cliente AI</a>
+          <a href="/servicios/automatizacion-de-procesos/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Automatización de Procesos</a>
+          <a href="/servicios/programas-de-fidelizacion/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Programas de Fidelización</a>
+          <a href="/servicios/ecommerce-growth/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Ecommerce Growth</a>
+        </div>
+        <a href="/#sectores" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Sectores</a>
+        <a href="/#casos" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Casos de Éxito</a>
+        <a href="/reservar/" class="mt-2 w-full text-center px-5 py-3 text-sm font-semibold text-white bg-slate-900 rounded-lg">
+          Agendar Llamada
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'py-4');
+        header.classList.remove('py-6');
+      } else {
+        header.classList.remove('py-4');
+        header.classList.add('py-6');
+      }
+    });
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      iconMenu.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+    const msb = document.getElementById('mobile-services-btn');
+    const msl = document.getElementById('mobile-services-list');
+    const sc = document.getElementById('services-chevron');
+    msb.addEventListener('click', () => {
+      const isOpen = !msl.classList.contains('hidden');
+      msl.classList.toggle('hidden', isOpen);
+      sc.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+  </script>
+
+  <!-- MAIN -->
+  <main class="pt-28 pb-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Page Header -->
+      <div class="mb-12">
+        <p class="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-3">Legal</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Política de Privacidad</h1>
+        <p class="text-slate-500 text-base">Última actualización: marzo de 2025</p>
+      </div>
+
+      <!-- Content -->
+      <div class="prose-content space-y-10 text-slate-700 leading-relaxed">
+
+        <!-- Intro -->
+        <div class="bg-brand-50 border border-brand-100 rounded-xl p-6">
+          <p class="text-slate-700 text-sm leading-relaxed">
+            En <strong>Vista Consulting</strong> nos comprometemos a proteger tu privacidad. Esta política explica qué datos personales recogemos, con qué finalidad los tratamos y cuáles son tus derechos. Al utilizar nuestro sitio web o ponerte en contacto con nosotros, aceptas el tratamiento descrito en este documento.
+          </p>
+        </div>
+
+        <!-- 1. Responsable -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">1. Responsable del Tratamiento</h2>
+          <div class="space-y-2 text-sm">
+            <p><span class="font-semibold text-slate-800">Empresa:</span> Vista Consulting</p>
+            <p><span class="font-semibold text-slate-800">Email de contacto:</span> <a href="mailto:hola@vistaconsulting.com" class="text-brand-600 hover:underline">hola@vistaconsulting.com</a></p>
+            <p><span class="font-semibold text-slate-800">Sitio web:</span> <a href="/" class="text-brand-600 hover:underline">vistaconsulting.com</a></p>
+          </div>
+        </section>
+
+        <!-- 2. Datos que recopilamos -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">2. Datos que Recopilamos</h2>
+          <p class="text-sm mb-4">Podemos recopilar los siguientes datos personales según la interacción que tengas con nosotros:</p>
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-2 h-2 bg-brand-500 rounded-full mt-2"></div>
+              <div>
+                <p class="font-semibold text-slate-800 text-sm">Datos de contacto</p>
+                <p class="text-sm text-slate-600">Nombre, dirección de correo electrónico, número de teléfono y empresa, facilitados a través del formulario de contacto o por email.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-2 h-2 bg-brand-500 rounded-full mt-2"></div>
+              <div>
+                <p class="font-semibold text-slate-800 text-sm">Datos de reserva</p>
+                <p class="text-sm text-slate-600">Información proporcionada al agendar una llamada a través de Cal.com (nombre, email y disponibilidad horaria).</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-2 h-2 bg-brand-500 rounded-full mt-2"></div>
+              <div>
+                <p class="font-semibold text-slate-800 text-sm">Datos de navegación</p>
+                <p class="text-sm text-slate-600">Dirección IP, tipo de navegador, páginas visitadas y tiempo de permanencia, recogidos de forma anónima o mediante cookies.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Finalidad -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">3. Finalidad del Tratamiento</h2>
+          <p class="text-sm mb-4">Tratamos tus datos personales para las siguientes finalidades:</p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Gestionar y responder tus consultas y solicitudes de información.
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Confirmar y gestionar las sesiones de consultoría agendadas.
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Enviarte información sobre nuestros servicios, si nos has dado tu consentimiento.
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Mejorar el funcionamiento y la experiencia de nuestro sitio web mediante análisis de navegación.
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Cumplir con las obligaciones legales aplicables.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 4. Base jurídica -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">4. Base Jurídica del Tratamiento</h2>
+          <div class="space-y-4 text-sm">
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Ejecución de un contrato o medidas precontractuales</p>
+              <p class="text-slate-600">Cuando el tratamiento es necesario para atender tu solicitud de información o gestionar la relación de servicio.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Consentimiento</p>
+              <p class="text-slate-600">Para el envío de comunicaciones comerciales. Puedes retirar tu consentimiento en cualquier momento.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Interés legítimo</p>
+              <p class="text-slate-600">Para el análisis anónimo del tráfico web con el objetivo de mejorar nuestros servicios.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Conservación -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">5. Conservación de los Datos</h2>
+          <p class="text-sm">
+            Conservaremos tus datos personales únicamente durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos o mientras exista una relación comercial activa. Una vez finalizada dicha relación, los datos se conservarán bloqueados durante los plazos legalmente exigidos y, transcurridos estos, serán eliminados de forma segura.
+          </p>
+        </section>
+
+        <!-- 6. Destinatarios -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">6. Destinatarios y Transferencias Internacionales</h2>
+          <p class="text-sm mb-4">
+            No cedemos tus datos a terceros salvo obligación legal. Podemos compartirlos con proveedores de servicios que actúan como encargados del tratamiento bajo nuestras instrucciones y con las garantías adecuadas, entre ellos:
+          </p>
+          <ul class="space-y-2 text-sm text-slate-600">
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">—</span> <strong class="text-slate-700">Cal.com</strong>: herramienta de agendado de llamadas (EE.UU., con garantías adecuadas).</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">—</span> <strong class="text-slate-700">Proveedores de email</strong>: para gestión de comunicaciones.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-500 font-bold">—</span> <strong class="text-slate-700">Herramientas de analítica web</strong>: para estadísticas de uso anónimas.</li>
+          </ul>
+        </section>
+
+        <!-- 7. Derechos -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">7. Tus Derechos</h2>
+          <p class="text-sm mb-4">En virtud del Reglamento General de Protección de Datos (RGPD), tienes derecho a:</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Acceso</p>
+              <p class="text-slate-600">Conocer qué datos tuyos tratamos.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Rectificación</p>
+              <p class="text-slate-600">Corregir datos inexactos o incompletos.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Supresión</p>
+              <p class="text-slate-600">Solicitar la eliminación de tus datos.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Oposición</p>
+              <p class="text-slate-600">Oponerte al tratamiento de tus datos.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Limitación</p>
+              <p class="text-slate-600">Restringir el tratamiento en ciertos supuestos.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+              <p class="font-semibold text-slate-800 mb-1">Portabilidad</p>
+              <p class="text-slate-600">Recibir tus datos en formato estructurado.</p>
+            </div>
+          </div>
+          <p class="text-sm mt-4">
+            Para ejercer cualquiera de estos derechos, contacta con nosotros en <a href="mailto:hola@vistaconsulting.com" class="text-brand-600 hover:underline font-medium">hola@vistaconsulting.com</a>. También tienes derecho a presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline font-medium">Agencia Española de Protección de Datos (AEPD)</a>.
+          </p>
+        </section>
+
+        <!-- 8. Cookies -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">8. Cookies</h2>
+          <p class="text-sm mb-4">
+            Nuestro sitio web puede utilizar cookies técnicas necesarias para su correcto funcionamiento, así como cookies analíticas para entender cómo interactúan los usuarios con el sitio. Las cookies analíticas solo se activarán si nos das tu consentimiento.
+          </p>
+          <p class="text-sm">
+            Puedes configurar tu navegador para rechazar o eliminar cookies en cualquier momento, aunque esto puede afectar a la funcionalidad del sitio.
+          </p>
+        </section>
+
+        <!-- 9. Cambios -->
+        <section>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">9. Cambios en esta Política</h2>
+          <p class="text-sm">
+            Nos reservamos el derecho a actualizar esta Política de Privacidad para adaptarla a cambios legislativos o de negocio. Cuando lo hagamos, revisaremos la fecha de "Última actualización" que figura al inicio del documento. Te recomendamos revisar esta página periódicamente.
+          </p>
+        </section>
+
+        <!-- Contact box -->
+        <div class="bg-slate-900 text-white rounded-xl p-8 text-center">
+          <h3 class="text-xl font-bold mb-2">¿Tienes preguntas sobre tu privacidad?</h3>
+          <p class="text-slate-400 text-sm mb-6">Estamos disponibles para resolver cualquier duda sobre el tratamiento de tus datos.</p>
+          <a href="mailto:hola@vistaconsulting.com" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-slate-900 bg-white rounded-xl hover:bg-slate-100 transition-colors">
+            hola@vistaconsulting.com
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center gap-2 mb-5"><div class="bg-brand-600 p-1.5 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></div><span class="text-xl font-bold text-white">Vista Consulting</span></div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">Consultora especializada en IA y automatización para negocios que quieren crecer sin ampliar su equipo.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Servicios</h3>
+          <ul class="space-y-3">
+            <li><a href="/servicios/webs-con-ia/" class="text-sm text-slate-400 hover:text-white transition-colors">Webs con IA Integrada</a></li>
+            <li><a href="/servicios/sistemas-de-ventas/" class="text-sm text-slate-400 hover:text-white transition-colors">Sistemas de Ventas</a></li>
+            <li><a href="/servicios/atencion-al-cliente-ai/" class="text-sm text-slate-400 hover:text-white transition-colors">Atención al Cliente AI</a></li>
+            <li><a href="/servicios/automatizacion-de-procesos/" class="text-sm text-slate-400 hover:text-white transition-colors">Automatización de Procesos</a></li>
+            <li><a href="/servicios/programas-de-fidelizacion/" class="text-sm text-slate-400 hover:text-white transition-colors">Programas de Fidelización</a></li>
+            <li><a href="/servicios/ecommerce-growth/" class="text-sm text-slate-400 hover:text-white transition-colors">Ecommerce Growth</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Empresa</h3>
+          <ul class="space-y-3">
+            <li><a href="/#casos" class="text-sm text-slate-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+            <li><a href="/#sectores" class="text-sm text-slate-400 hover:text-white transition-colors">Sectores</a></li>
+            <li><a href="/#testimonios" class="text-sm text-slate-400 hover:text-white transition-colors">Testimonios</a></li>
+            <li><a href="/politica-de-privacidad/" class="text-sm text-slate-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+            <li><a href="/terminos-de-servicio/" class="text-sm text-slate-400 hover:text-white transition-colors">Términos de Servicio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Contacto</h3>
+          <p class="text-sm text-slate-400 mb-2">¿Tienes un proyecto en mente?</p>
+          <a href="mailto:hola@vistaconsulting.com" class="text-sm text-slate-300 hover:text-white transition-colors block mb-6">hola@vistaconsulting.com</a>
+          <a href="/reservar/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-700 transition-colors">Agendar Llamada<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-500">&copy; <script>document.write(new Date().getFullYear())</script> Vista Consulting. Todos los derechos reservados.</p>
+        <div class="flex gap-6 text-sm text-slate-500"><a href="/politica-de-privacidad/" class="hover:text-slate-300 transition-colors">Política de Privacidad</a><a href="/terminos-de-servicio/" class="hover:text-slate-300 transition-colors">Términos de Servicio</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
       // Brand palette for particles
       const colorPalette = [
         { r: 59, g: 130, b: 246 }, // Blue-500
-        { r: 147, g: 51, b: 234 }, // Purple-600
+        { r: 29, g: 150, b: 255 }, // Brand-500
         { r: 96, g: 165, b: 250 }, // Blue-400
       ];
 
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
       {/* Background Decor */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-20 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
       </div>
 
       {/* Particles Canvas */}
@@ -129,13 +129,13 @@ export const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
           </span>
-          Agencia especializada en IA & Automatización
+          Consultora especializada en IA & Automatización
         </div>
 
         {/* Headline */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-[1.1]">
           Escala tu negocio con <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-500">
             Sistemas Inteligentes
           </span>
         </h1>
@@ -149,14 +149,14 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <a 
             href="#contacto"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white transition-all bg-brand-600 rounded-full hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-500/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white transition-all bg-brand-600 rounded-xl hover:bg-brand-700 hover:shadow-xl hover:shadow-brand-500/20"
           >
-            Auditoría Gratuita
+            Agendar Llamada
             <ArrowRight size={18} />
           </a>
           <a 
             href="#casos"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 transition-all bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:border-slate-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 transition-all bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300"
           >
             Ver Casos de Éxito
           </a>

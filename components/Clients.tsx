@@ -10,7 +10,8 @@ export const Clients: React.FC = () => {
   const clients: Client[] = [
     {
       name: "The Orb",
-      logo: "/logos/the-orb.png"
+      logo: "/logos/the-orb.png",
+      className: "!max-h-14"
     },
     {
       name: "Tu Mente En Línea",
@@ -18,15 +19,18 @@ export const Clients: React.FC = () => {
     },
     {
       name: "Wide Knowledge",
-      logo: "/logos/wide-knowledge.png"
+      logo: "/logos/wide-knowledge.png",
+      className: "!max-h-14"
     },
     {
       name: "Hihn Leandro",
-      logo: "/logos/hihn-leandro.png"
+      logo: "/logos/hihn-leandro.png",
+      className: "!max-h-14"
     },
     {
       name: "Atenas",
-      logo: "/logos/atenas.png"
+      logo: "/logos/atenas.png",
+      className: "!max-h-14"
     },
     {
       name: "CM Abogadas",
@@ -34,21 +38,45 @@ export const Clients: React.FC = () => {
     },
     {
       name: "Fuegos",
-      logo: "/logos/fuegos.png"
+      logo: "/logos/fuegos.png",
+      className: "!max-h-14"
     },
     {
       name: "HBH Sportswear",
-      logo: "/logos/hbh-sportswear.png"
+      logo: "/logos/hbh-sportswear.png",
+      className: "!max-h-[84px]"
     },
     {
       name: "Tam Dental",
-      logo: "/logos/tam-dental.png",
-      className: "max-h-12"
+      logo: "/logos/tam-dental.png"
     },
     {
       name: "Silver Peaks",
-      logo: "/logos/silver-peaks.png",
-      className: "invert brightness-0"
+      logo: "/logos/silver-peaks.png"
+    },
+    {
+      name: "Atom Capital",
+      logo: "/logos/atom-capital.png",
+      className: "!max-h-[8rem]"
+    },
+    {
+      name: "Grozni",
+      logo: "/logos/grozni.jpg",
+      className: "!max-h-[8rem]"
+    },
+    {
+      name: "Kusta Barber",
+      logo: "/logos/kusta-barber.png",
+      className: "!max-h-[8rem]"
+    },
+    {
+      name: "Trimurti Yoga Studio",
+      logo: "/logos/trimurti-yoga-studio.jpg",
+      className: "!max-h-[18rem]"
+    },
+    {
+      name: "Mood Brunch",
+      logo: "/logos/mood-brunch.png"
     }
   ];
 
@@ -60,16 +88,16 @@ export const Clients: React.FC = () => {
         </p>
 
         {/* Improved Grid Layout for better alignment */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center">
           {clients.map((client, idx) => (
             <div
               key={idx}
-              className="w-full flex items-center justify-center p-4 group transition-all duration-300"
+              className="w-full h-20 flex items-center justify-center group transition-all duration-300"
             >
               <img
                 src={client.logo}
                 alt={`${client.name} logo`}
-                className={`max-h-16 w-auto object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${client.className || ''}`}
+                className={`max-h-10 w-auto max-w-[140px] object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ${client.className || ''}`}
                 loading="lazy"
               />
             </div>

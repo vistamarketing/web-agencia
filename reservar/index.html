@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reserva tu Llamada — Vista Consulting</title>
+  <meta name="description" content="Agenda una sesión estratégica gratuita de 30 minutos con Vista Consulting. Analizamos tu negocio y te mostramos cómo la IA puede hacerlo crecer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#ecf8ff',
+              100: '#d5eeff',
+              400: '#48b8ff',
+              500: '#1d96ff',
+              600: '#0675ff',
+              700: '#005ef6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(20px, -20px) scale(1.05); }
+      66%       { transform: translate(-15px, 10px) scale(0.97); }
+    }
+    .animate-blob { animation: blob 7s infinite ease-in-out; }
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animate-ping {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes ping {
+      75%, 100% { transform: scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-slate-900 font-sans">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="bg-brand-600 text-white p-1.5 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/>
+            <line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/>
+            <line x1="12" y1="22" x2="12" y2="18"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-slate-900">Vista Consulting</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">
+            Servicios
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200 group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 hidden group-hover:block z-10">
+            <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-3 w-64">
+              <a href="/servicios/webs-con-ia/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Webs con IA Integrada</a>
+              <a href="/servicios/sistemas-de-ventas/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Sistemas de Ventas</a>
+              <a href="/servicios/atencion-al-cliente-ai/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Atención al Cliente AI</a>
+              <a href="/servicios/automatizacion-de-procesos/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Automatización de Procesos</a>
+              <a href="/servicios/programas-de-fidelizacion/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Programas de Fidelización</a>
+              <a href="/servicios/ecommerce-growth/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Ecommerce Growth</a>
+            </div>
+          </div>
+        </div>
+        <a href="/#sectores" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Sectores</a>
+        <a href="/#casos" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Casos de Éxito</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <a href="/reservar/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5">
+          Agendar Llamada
+        </a>
+      </div>
+
+      <!-- Mobile burger -->
+      <button id="burger-btn" class="md:hidden p-2 text-slate-600" aria-label="Menú">
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl">
+      <nav class="flex flex-col gap-2">
+        <button id="mobile-services-btn" class="flex items-center justify-between w-full text-base font-medium text-slate-700 hover:text-brand-600 py-1">
+          Servicios
+          <svg id="services-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="mobile-services-list" class="hidden pl-4 pb-1">
+          <a href="/servicios/webs-con-ia/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Webs con IA Integrada</a>
+          <a href="/servicios/sistemas-de-ventas/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Sistemas de Ventas</a>
+          <a href="/servicios/atencion-al-cliente-ai/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Atención al Cliente AI</a>
+          <a href="/servicios/automatizacion-de-procesos/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Automatización de Procesos</a>
+          <a href="/servicios/programas-de-fidelizacion/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Programas de Fidelización</a>
+          <a href="/servicios/ecommerce-growth/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Ecommerce Growth</a>
+        </div>
+        <a href="/#sectores" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Sectores</a>
+        <a href="/#casos" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Casos de Éxito</a>
+        <a href="/reservar/" class="mt-2 w-full text-center px-5 py-3 text-sm font-semibold text-white bg-slate-900 rounded-lg">
+          Agendar Llamada
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Scroll glassmorphism
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.remove('bg-transparent', 'py-6');
+        header.classList.add('bg-white/80', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'py-4');
+      } else {
+        header.classList.add('bg-transparent', 'py-6');
+        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'border-b', 'border-slate-200', 'py-4');
+      }
+    });
+    // Mobile menu toggle
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    burgerBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      iconMenu.classList.toggle('hidden', !isOpen);
+      iconClose.classList.toggle('hidden', isOpen);
+    });
+    const msb = document.getElementById('mobile-services-btn');
+    const msl = document.getElementById('mobile-services-list');
+    const sc = document.getElementById('services-chevron');
+    msb.addEventListener('click', () => {
+      const isOpen = !msl.classList.contains('hidden');
+      msl.classList.toggle('hidden', isOpen);
+      sc.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+  </script>
+
+  <!-- MAIN -->
+  <main class="pt-24">
+
+    <!-- HERO -->
+    <section class="relative py-16 lg:py-20 overflow-hidden bg-slate-50">
+      <!-- Blobs -->
+      <div class="absolute top-10 left-1/4 w-72 h-72 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob pointer-events-none"></div>
+      <div class="absolute top-10 right-1/4 w-72 h-72 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000 pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-medium mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+          </span>
+          Sin coste · 30 minutos · Google Meet
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-5 leading-[1.1]">
+          Reserva tu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-500">sesión estratégica</span> gratuita
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          En 30 minutos analizamos tus procesos actuales y te mostramos, con ejemplos concretos, cómo la IA puede ahorrarte tiempo y hacer crecer tu negocio.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT + CALENDAR -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+
+          <!-- Left: What to expect -->
+          <div class="lg:col-span-1 space-y-8">
+            <div>
+              <h2 class="text-2xl font-bold text-slate-900 mb-2">¿Qué ocurre en la llamada?</h2>
+              <p class="text-slate-500 text-sm leading-relaxed">Una conversación directa, sin presentaciones de ventas. Nos enfocamos en tu situación concreta.</p>
+            </div>
+
+            <ul class="space-y-6">
+              <li class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 font-bold text-sm">01</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-0.5">Diagnóstico de tu negocio</h4>
+                  <p class="text-sm text-slate-500 leading-relaxed">Entendemos tus procesos actuales, cuellos de botella y objetivos de crecimiento.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 font-bold text-sm">02</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-0.5">Oportunidades identificadas</h4>
+                  <p class="text-sm text-slate-500 leading-relaxed">Te mostramos exactamente dónde la automatización tendría mayor impacto en tu caso.</p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 font-bold text-sm">03</div>
+                <div>
+                  <h4 class="font-semibold text-slate-900 mb-0.5">Plan de acción claro</h4>
+                  <p class="text-sm text-slate-500 leading-relaxed">Sales con pasos concretos que puedes aplicar, independientemente de si trabajamos juntos.</p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Divider -->
+            <div class="border-t border-slate-100 pt-6 space-y-4">
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <svg class="w-5 h-5 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Sin compromiso de compra
+              </div>
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <svg class="w-5 h-5 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Recibirás confirmación por email
+              </div>
+              <div class="flex items-center gap-3 text-sm text-slate-600">
+                <svg class="w-5 h-5 text-brand-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Respuesta inmediata de disponibilidad
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Cal.com embed -->
+          <div class="lg:col-span-2">
+            <div class="bg-slate-50 rounded-2xl border border-slate-100 p-2 shadow-sm overflow-hidden" style="min-height:660px">
+              <!-- Cal inline embed code begins -->
+              <div style="width:100%;height:660px;overflow:scroll" id="my-cal-inline-discovery-call"></div>
+              <script type="text/javascript">
+                (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                Cal("init", "discovery-call", {origin:"https://app.cal.com"});
+                Cal.ns["discovery-call"]("inline", {
+                  elementOrSelector:"#my-cal-inline-discovery-call",
+                  config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+                  calLink: "vista-consulting/discovery-call",
+                });
+                Cal.ns["discovery-call"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+              </script>
+              <!-- Cal inline embed code ends -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF STRIP -->
+    <section class="py-12 bg-slate-50 border-t border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <p class="text-3xl font-bold text-slate-900 mb-1">40%+</p>
+            <p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Reducción de costes operativos</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-slate-900 mb-1">1.200h/año</p>
+            <p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Tiempo ahorrado de media</p>
+          </div>
+          <div>
+            <p class="text-3xl font-bold text-slate-900 mb-1">3.5x</p>
+            <p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Aumento de conversión</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center gap-2 mb-5"><div class="bg-brand-600 p-1.5 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></div><span class="text-xl font-bold text-white">Vista Consulting</span></div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">Consultora especializada en IA y automatización para negocios que quieren crecer sin ampliar su equipo.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Servicios</h3>
+          <ul class="space-y-3">
+            <li><a href="/servicios/webs-con-ia/" class="text-sm text-slate-400 hover:text-white transition-colors">Webs con IA Integrada</a></li>
+            <li><a href="/servicios/sistemas-de-ventas/" class="text-sm text-slate-400 hover:text-white transition-colors">Sistemas de Ventas</a></li>
+            <li><a href="/servicios/atencion-al-cliente-ai/" class="text-sm text-slate-400 hover:text-white transition-colors">Atención al Cliente AI</a></li>
+            <li><a href="/servicios/automatizacion-de-procesos/" class="text-sm text-slate-400 hover:text-white transition-colors">Automatización de Procesos</a></li>
+            <li><a href="/servicios/programas-de-fidelizacion/" class="text-sm text-slate-400 hover:text-white transition-colors">Programas de Fidelización</a></li>
+            <li><a href="/servicios/ecommerce-growth/" class="text-sm text-slate-400 hover:text-white transition-colors">Ecommerce Growth</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Empresa</h3>
+          <ul class="space-y-3">
+            <li><a href="/#casos" class="text-sm text-slate-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+            <li><a href="/#sectores" class="text-sm text-slate-400 hover:text-white transition-colors">Sectores</a></li>
+            <li><a href="/#testimonios" class="text-sm text-slate-400 hover:text-white transition-colors">Testimonios</a></li>
+            <li><a href="/politica-de-privacidad/" class="text-sm text-slate-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+            <li><a href="/terminos-de-servicio/" class="text-sm text-slate-400 hover:text-white transition-colors">Términos de Servicio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Contacto</h3>
+          <p class="text-sm text-slate-400 mb-2">¿Tienes un proyecto en mente?</p>
+          <a href="mailto:hola@vistaconsulting.com" class="text-sm text-slate-300 hover:text-white transition-colors block mb-6">hola@vistaconsulting.com</a>
+          <a href="/reservar/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-700 transition-colors">Agendar Llamada<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-500">&copy; <script>document.write(new Date().getFullYear())</script> Vista Consulting. Todos los derechos reservados.</p>
+        <div class="flex gap-6 text-sm text-slate-500"><a href="/politica-de-privacidad/" class="hover:text-slate-300 transition-colors">Política de Privacidad</a><a href="/terminos-de-servicio/" class="hover:text-slate-300 transition-colors">Términos de Servicio</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

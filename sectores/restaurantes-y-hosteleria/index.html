@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurantes y Hostelería — Vista Consulting</title>
+  <meta name="description" content="Reservas automatizadas, recordatorios de visita y reactivación de clientes para restaurantes, bares y hoteles." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { brand: { 50:'#ecf8ff',100:'#d5eeff',400:'#48b8ff',500:'#1d96ff',600:'#0675ff',700:'#005ef6' } }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes blob { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(20px,-20px) scale(1.05)} 66%{transform:translate(-15px,10px) scale(0.97)} }
+    .animate-blob { animation: blob 7s infinite ease-in-out; }
+    .animation-delay-2000 { animation-delay: 2s; }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-slate-900 font-sans">
+
+  <!-- HEADER -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <div class="bg-brand-600 text-white p-1.5 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-slate-900">Vista Consulting</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">
+            Servicios
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200 group-hover:rotate-180"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 hidden group-hover:block z-10">
+            <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-3 w-64">
+              <a href="/servicios/webs-con-ia/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Webs con IA Integrada</a>
+              <a href="/servicios/sistemas-de-ventas/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Sistemas de Ventas</a>
+              <a href="/servicios/atencion-al-cliente-ai/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Atención al Cliente AI</a>
+              <a href="/servicios/automatizacion-de-procesos/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Automatización de Procesos</a>
+              <a href="/servicios/programas-de-fidelizacion/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Programas de Fidelización</a>
+              <a href="/servicios/ecommerce-growth/" class="block px-3 py-2 text-sm text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors">Ecommerce Growth</a>
+            </div>
+          </div>
+        </div>
+        <a href="/#sectores" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Sectores</a>
+        <a href="/#casos" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Casos de Éxito</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all">Acceso Clientes</a>
+        <a href="/reservar/" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-500/20 transition-all">Agendar Llamada</a>
+      </div>
+      <button id="burger-btn" class="md:hidden p-2 text-slate-600">
+        <svg id="icon-menu" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 p-4 shadow-xl">
+      <nav class="flex flex-col gap-2">
+        <button id="mobile-services-btn" class="flex items-center justify-between w-full text-base font-medium text-slate-700 hover:text-brand-600 py-1">
+          Servicios
+          <svg id="services-chevron" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="transition-transform duration-200"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="mobile-services-list" class="hidden pl-4 pb-1">
+          <a href="/servicios/webs-con-ia/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Webs con IA Integrada</a>
+          <a href="/servicios/sistemas-de-ventas/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Sistemas de Ventas</a>
+          <a href="/servicios/atencion-al-cliente-ai/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Atención al Cliente AI</a>
+          <a href="/servicios/automatizacion-de-procesos/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Automatización de Procesos</a>
+          <a href="/servicios/programas-de-fidelizacion/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Programas de Fidelización</a>
+          <a href="/servicios/ecommerce-growth/" class="block text-sm text-slate-600 hover:text-brand-600 py-1">Ecommerce Growth</a>
+        </div>
+        <a href="/#sectores" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Sectores</a>
+        <a href="/#casos" class="text-base font-medium text-slate-700 hover:text-brand-600 py-1">Casos de Éxito</a>
+        <a href="#" class="mt-2 w-full text-center px-5 py-3 text-sm font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg">Acceso Clientes</a>
+        <a href="/reservar/" class="w-full text-center px-5 py-3 text-sm font-semibold text-white bg-brand-600 rounded-lg">Agendar Llamada</a>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const h=document.getElementById('main-header');
+    window.addEventListener('scroll',()=>{if(window.scrollY>10){h.classList.remove('py-6');h.classList.add('py-4')}else{h.classList.remove('py-4');h.classList.add('py-6')}});
+    const bb=document.getElementById('burger-btn'),mm=document.getElementById('mobile-menu'),im=document.getElementById('icon-menu'),ic=document.getElementById('icon-close');
+    bb.addEventListener('click',()=>{const o=!mm.classList.contains('hidden');mm.classList.toggle('hidden',o);im.classList.toggle('hidden',!o);ic.classList.toggle('hidden',o)});
+    const msb=document.getElementById('mobile-services-btn'),msl=document.getElementById('mobile-services-list'),sc=document.getElementById('services-chevron');
+    msb.addEventListener('click',()=>{const isOpen=!msl.classList.contains('hidden');msl.classList.toggle('hidden',isOpen);sc.style.transform=isOpen?'':'rotate(180deg)'});
+  </script>
+
+  <main class="pt-20">
+
+    <!-- HERO -->
+    <section class="relative py-20 lg:py-28 bg-slate-50 overflow-hidden">
+      <div class="absolute top-10 left-1/4 w-80 h-80 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob pointer-events-none"></div>
+      <div class="absolute top-10 right-1/4 w-80 h-80 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000 pointer-events-none"></div>
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="/#sectores" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-brand-600 transition-colors mb-8">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7-7-7 7 7 7"/></svg>
+          Todos los sectores
+        </a>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-medium mb-6">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
+          Sector
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+          Restaurantes y <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-500">Hostelería</span>
+        </h1>
+        <p class="text-xl text-slate-600 max-w-2xl leading-relaxed mb-10">
+          Reservas automatizadas, recordatorios de visita y reactivación de clientes para que tus mesas siempre estén llenas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/reservar/" class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold text-white bg-brand-600 rounded-xl hover:bg-brand-700 hover:shadow-xl transition-all">
+            Agendar Llamada
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          </a>
+          <a href="#como-te-ayudamos" class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-all">
+            Ver cómo te ayudamos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TE AYUDAMOS -->
+    <section id="como-te-ayudamos" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cómo te ayudamos</h2>
+          <p class="text-slate-500 max-w-xl mx-auto">Soluciones de automatización diseñadas para restaurantes y negocios de hostelería que quieren llenar mesas sin esfuerzo.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Reservas automáticas</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Tus clientes reservan mesa desde WhatsApp, web o redes sociales sin que tu equipo tenga que atender llamadas.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Recordatorios de visita</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Confirmaciones automáticas antes de cada reserva para reducir no-shows y optimizar la ocupación.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Reactivación de clientes</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Campañas inteligentes que detectan clientes sin visita reciente y los invitan a volver con ofertas personalizadas.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69l1.519-4.674z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Gestión de reseñas con IA</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Solicitud automática de reseñas a comensales satisfechos y alertas cuando se publica una reseña negativa para actuar rápido.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Campañas de eventos</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Promoción automatizada de eventos especiales, menús de temporada y fechas señaladas a tu base de clientes segmentada.</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-4">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m-6 9 2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-2">Encuestas de satisfacción</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Feedback automático después de cada visita para detectar áreas de mejora y reconocer lo que funciona bien.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="como-funciona" class="py-20 bg-slate-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Cómo funciona</h2>
+          <p class="text-slate-500">Un proceso claro adaptado a restaurantes y hostelería.</p>
+        </div>
+        <div class="space-y-6">
+          <div class="flex gap-6 bg-white p-6 rounded-xl border border-slate-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Análisis de tu negocio</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Estudiamos tu flujo de reservas, canales de comunicación, tasa de ocupación y perfil de cliente.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 bg-white p-6 rounded-xl border border-slate-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Diseño de automatizaciones</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Creamos flujos de reserva, confirmación, reactivación y campañas adaptados a tu tipo de establecimiento.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 bg-white p-6 rounded-xl border border-slate-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Integración y activación</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Conectamos todo con tus herramientas actuales y activamos las automatizaciones de forma progresiva.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 bg-white p-6 rounded-xl border border-slate-100">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg">4</div>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-1">Optimización continua</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">Monitorizamos ocupación, reseñas y fidelización para ajustar y maximizar resultados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section class="py-16 bg-white border-t border-slate-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div><p class="text-4xl font-bold text-brand-600 mb-2">+25%</p><p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Más reservas</p></div>
+          <div><p class="text-4xl font-bold text-brand-600 mb-2">90%</p><p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Mesas confirmadas</p></div>
+          <div><p class="text-4xl font-bold text-brand-600 mb-2">+30%</p><p class="text-sm text-slate-500 font-medium uppercase tracking-wide">Clientes recurrentes</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-slate-900 text-white">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para llenar tus mesas en automático?</h2>
+        <p class="text-slate-400 mb-8">Agenda una sesión gratuita y te mostramos cómo automatizar reservas y fidelizar comensales.</p>
+        <a href="/reservar/" class="inline-flex items-center gap-2 px-8 py-4 text-base font-bold text-slate-900 bg-white rounded-xl hover:bg-slate-100 transition-colors">
+          Agendar Llamada
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <div class="flex items-center gap-2 mb-5"><div class="bg-brand-600 p-1.5 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></div><span class="text-xl font-bold text-white">Vista Consulting</span></div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">Consultora especializada en IA y automatización para negocios que quieren crecer sin ampliar su equipo.</p>
+          <div class="flex items-center gap-3">
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-500 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Servicios</h3>
+          <ul class="space-y-3">
+            <li><a href="/servicios/webs-con-ia/" class="text-sm text-slate-400 hover:text-white transition-colors">Webs con IA Integrada</a></li>
+            <li><a href="/servicios/sistemas-de-ventas/" class="text-sm text-slate-400 hover:text-white transition-colors">Sistemas de Ventas</a></li>
+            <li><a href="/servicios/atencion-al-cliente-ai/" class="text-sm text-slate-400 hover:text-white transition-colors">Atención al Cliente AI</a></li>
+            <li><a href="/servicios/automatizacion-de-procesos/" class="text-sm text-slate-400 hover:text-white transition-colors">Automatización de Procesos</a></li>
+            <li><a href="/servicios/programas-de-fidelizacion/" class="text-sm text-slate-400 hover:text-white transition-colors">Programas de Fidelización</a></li>
+            <li><a href="/servicios/ecommerce-growth/" class="text-sm text-slate-400 hover:text-white transition-colors">Ecommerce Growth</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Empresa</h3>
+          <ul class="space-y-3">
+            <li><a href="/#casos" class="text-sm text-slate-400 hover:text-white transition-colors">Casos de Éxito</a></li>
+            <li><a href="/#sectores" class="text-sm text-slate-400 hover:text-white transition-colors">Sectores</a></li>
+            <li><a href="/#testimonios" class="text-sm text-slate-400 hover:text-white transition-colors">Testimonios</a></li>
+            <li><a href="/politica-de-privacidad/" class="text-sm text-slate-400 hover:text-white transition-colors">Política de Privacidad</a></li>
+            <li><a href="/terminos-de-servicio/" class="text-sm text-slate-400 hover:text-white transition-colors">Términos de Servicio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">Contacto</h3>
+          <p class="text-sm text-slate-400 mb-2">¿Tienes un proyecto en mente?</p>
+          <a href="mailto:hola@vistaconsulting.com" class="text-sm text-slate-300 hover:text-white transition-colors block mb-6">hola@vistaconsulting.com</a>
+          <a href="/reservar/" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 rounded-xl hover:bg-brand-700 transition-colors">Agendar Llamada<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-500">&copy; <script>document.write(new Date().getFullYear())</script> Vista Consulting. Todos los derechos reservados.</p>
+        <div class="flex gap-6 text-sm text-slate-500"><a href="/politica-de-privacidad/" class="hover:text-slate-300 transition-colors">Política de Privacidad</a><a href="/terminos-de-servicio/" class="hover:text-slate-300 transition-colors">Términos de Servicio</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
