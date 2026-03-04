@@ -110,13 +110,9 @@ export const Services: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-brand-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
               <div className="relative z-10">
-                {/* Icon */}
-                <div className="w-16 h-16 bg-brand-600 rounded-xl flex items-center justify-center mb-8 text-white shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon size={32} strokeWidth={1.5} />
-                </div>
-
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors">
+                <h3 className="flex items-center gap-3 text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors">
+                  <service.icon size={22} strokeWidth={1.5} className="text-brand-600 shrink-0" />
                   {service.title}
                 </h3>
                 <p className="text-slate-600 text-lg leading-relaxed mb-8">
