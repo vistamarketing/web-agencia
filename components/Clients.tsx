@@ -9,6 +9,23 @@ export const Clients: React.FC = () => {
 
   const clients: Client[] = [
     {
+      name: "Silver Peaks",
+      logo: "/logos/silver-peaks.png"
+    },
+    {
+      name: "Hihn Leandro Wildlife",
+      logo: "/logos/hihn-leandro.png",
+      className: "!max-h-14"
+    },
+    {
+      name: "Tam Dental",
+      logo: "/logos/tam-dental.png"
+    },
+    {
+      name: "CM Abogadas",
+      logo: "/logos/cm-abogadas.png"
+    },
+    {
       name: "The Orb",
       logo: "/logos/the-orb.png",
       className: "!max-h-14"
@@ -18,28 +35,9 @@ export const Clients: React.FC = () => {
       logo: "/logos/tu-mente-en-linea.png"
     },
     {
-      name: "Wide Knowledge",
-      logo: "/logos/wide-knowledge.png",
-      className: "!max-h-14"
-    },
-    {
-      name: "Hihn Leandro",
-      logo: "/logos/hihn-leandro.png",
-      className: "!max-h-14"
-    },
-    {
-      name: "Atenas",
-      logo: "/logos/atenas.png",
-      className: "!max-h-14"
-    },
-    {
-      name: "CM Abogadas",
-      logo: "/logos/cm-abogadas.png"
-    },
-    {
-      name: "Fuegos",
-      logo: "/logos/fuegos.png",
-      className: "!max-h-14"
+      name: "Atom Capital",
+      logo: "/logos/atom-capital.png",
+      className: "!max-h-[8rem]"
     },
     {
       name: "HBH Sportswear",
@@ -47,26 +45,28 @@ export const Clients: React.FC = () => {
       className: "!max-h-[84px]"
     },
     {
-      name: "Tam Dental",
-      logo: "/logos/tam-dental.png"
+      name: "Atenas",
+      logo: "/logos/atenas.png",
+      className: "!max-h-14"
     },
     {
-      name: "Silver Peaks",
-      logo: "/logos/silver-peaks.png"
+      name: "Wide Knowledge",
+      logo: "/logos/wide-knowledge.png",
+      className: "!max-h-14"
     },
     {
-      name: "Atom Capital",
-      logo: "/logos/atom-capital.png",
+      name: "Fuegos",
+      logo: "/logos/fuegos.png",
+      className: "!max-h-14"
+    },
+    {
+      name: "Kusta Barber",
+      logo: "/logos/kusta-barber.png",
       className: "!max-h-[8rem]"
     },
     {
       name: "Grozni",
       logo: "/logos/grozni.jpg",
-      className: "!max-h-[8rem]"
-    },
-    {
-      name: "Kusta Barber",
-      logo: "/logos/kusta-barber.png",
       className: "!max-h-[8rem]"
     },
     {

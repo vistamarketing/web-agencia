@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scissors, Activity, PawPrint, Briefcase, ShoppingBag, BookOpen, UtensilsCrossed, Wrench, Home } from 'lucide-react';
+import { Scissors, Activity, PawPrint, Briefcase, ShoppingBag, BookOpen, UtensilsCrossed, Plane, Stethoscope } from 'lucide-react';
 import { SectorItem } from '../types';
 
 const sectors: SectorItem[] = [
@@ -46,16 +46,16 @@ const sectors: SectorItem[] = [
     href: "/sectores/restaurantes-y-hosteleria/",
   },
   {
-    title: "Talleres y Automoción",
-    description: "Gestión automática de citas para revisiones y reparaciones, recordatorios de mantenimiento periódico y reactivación de clientes sin visita reciente.",
-    icon: Wrench,
-    href: "/sectores/talleres-y-automocion/",
+    title: "Turismo y Viajes",
+    description: "Agencias de viaje, alojamientos turísticos y operadores. Automatizamos la atracción de viajeros, gestión de reservas y seguimiento post-viaje.",
+    icon: Plane,
+    href: "/sectores/turismo-y-viajes/",
   },
   {
-    title: "Inmobiliarias y Seguros",
-    description: "Calificación automática de interesados, seguimiento personalizado por WhatsApp y email, y automatización de la gestión documental.",
-    icon: Home,
-    href: "/sectores/inmobiliarias-y-seguros/",
+    title: "Clínicas Dentales",
+    description: "Agendamiento automático, recordatorios de citas y seguimiento de tratamientos para clínicas dentales. Más pacientes, menos gestión.",
+    icon: Stethoscope,
+    href: "/sectores/clinicas-dentales/",
   },
 ];
 

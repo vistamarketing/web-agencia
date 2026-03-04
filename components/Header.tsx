@@ -18,8 +18,8 @@ const sectores = [
   { label: 'Ecommerce', href: '/sectores/ecommerce/' },
   { label: 'Educación y Formación Online', href: '/sectores/educacion-y-formacion-online/' },
   { label: 'Restaurantes y Hostelería', href: '/sectores/restaurantes-y-hosteleria/' },
-  { label: 'Talleres y Automoción', href: '/sectores/talleres-y-automocion/' },
-  { label: 'Inmobiliarias y Seguros', href: '/sectores/inmobiliarias-y-seguros/' },
+  { label: 'Turismo y Viajes', href: '/sectores/turismo-y-viajes/' },
+  { label: 'Clínicas Dentales', href: '/sectores/clinicas-dentales/' },
 ];
 
 export const Header: React.FC = () => {

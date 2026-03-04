@@ -41,8 +41,8 @@ export default defineConfig(({ mode }) => {
             sectorEcommerce: path.resolve(__dirname, 'sectores/ecommerce/index.html'),
             sectorEducacion: path.resolve(__dirname, 'sectores/educacion-y-formacion-online/index.html'),
             sectorRestaurantes: path.resolve(__dirname, 'sectores/restaurantes-y-hosteleria/index.html'),
-            sectorAutomocion: path.resolve(__dirname, 'sectores/talleres-y-automocion/index.html'),
-            sectorInmobiliarias: path.resolve(__dirname, 'sectores/inmobiliarias-y-seguros/index.html'),
+            sectorTurismo: path.resolve(__dirname, 'sectores/turismo-y-viajes/index.html'),
+            sectorDentales: path.resolve(__dirname, 'sectores/clinicas-dentales/index.html'),
           }
         }
       }
