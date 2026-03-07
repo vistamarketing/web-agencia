@@ -42,9 +42,9 @@ export const Hero: React.FC = () => {
 
       // Brand palette for particles
       const colorPalette = [
-        { r: 59, g: 130, b: 246 }, // Blue-500
-        { r: 29, g: 150, b: 255 }, // Brand-500
-        { r: 96, g: 165, b: 250 }, // Blue-400
+        { r: 131, g: 83, b: 193 },  // Vista Purple #8353C1
+        { r: 155, g: 109, b: 215 }, // Vista Violet #9B6DD7
+        { r: 232, g: 115, b: 74 },  // Vista Coral #E8734A
       ];
 
       for (let i = 0; i < finalCount; i++) {
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
       {/* Background Decor */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-20 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-coral-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
       </div>
 
       {/* Particles Canvas */}
@@ -135,14 +135,14 @@ export const Hero: React.FC = () => {
         {/* Headline */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 max-w-4xl mx-auto leading-[1.1]">
           Escala tu negocio con <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-500">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-coral-400">
             Sistemas Inteligentes
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Implementamos ecosistemas de IA (n8n, Gemini, Claude) para automatizar ventas, atención al cliente y operaciones. Elimina el trabajo manual hoy mismo.
+          Implementamos ecosistemas de IA para automatizar ventas, atención al cliente y operaciones. Elimina el trabajo manual hoy mismo.
         </p>
 
         {/* CTAs */}

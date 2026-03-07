@@ -6,7 +6,7 @@ export const Contact: React.FC = () => {
     <section id="contacto" className="py-24 bg-slate-900 text-white relative overflow-hidden">
       {/* Abstract shapes */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-brand-600 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-600 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-coral-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
 
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-3xl md:text-5xl font-bold mb-6">

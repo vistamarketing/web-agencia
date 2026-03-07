@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   { label: 'Webs con IA Integrada', href: '/servicios/webs-con-ia/' },
@@ -26,11 +26,8 @@ export const Footer: React.FC = () => {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-5">
-              <div className="bg-brand-600 p-1.5 rounded-lg">
-                <Compass size={20} className="text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">Vista Consulting</span>
+            <div className="flex items-center mb-5">
+              <img src="/logos/vista-logo.png" alt="Vista Consulting" className="h-8 w-auto brightness-0 invert" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Consultora especializada en IA y automatización para negocios que quieren crecer sin ampliar su equipo.

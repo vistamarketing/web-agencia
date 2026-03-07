@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Compass, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const services = [
   { label: 'Webs con IA Integrada', href: '/servicios/webs-con-ia/' },
@@ -46,14 +46,9 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="bg-brand-600 text-white p-1.5 rounded-lg">
-            <Compass size={20} />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">
-            Vista Consulting
-          </span>
-        </div>
+        <a href="/" className="flex items-center">
+          <img src="/logos/vista-logo.png" alt="Vista Consulting" className="h-14 w-auto" />
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
