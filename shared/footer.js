@@ -47,7 +47,7 @@
     <div class="border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-sm text-slate-500">&copy; ${new Date().getFullYear()} Vista Consulting. Todos los derechos reservados.</p>
-        <div class="flex gap-6 text-sm text-slate-500"><a href="/politica-de-privacidad/" class="hover:text-slate-300 transition-colors">Política de Privacidad</a><a href="/terminos-de-servicio/" class="hover:text-slate-300 transition-colors">Términos de Servicio</a></div>
+        <div class="flex gap-6 text-sm text-slate-500"><a href="/politica-de-privacidad/" class="hover:text-slate-300 transition-colors">Política de Privacidad</a><a href="/terminos-de-servicio/" class="hover:text-slate-300 transition-colors">Términos de Servicio</a><button onclick="window.openCookieSettings && window.openCookieSettings()" class="hover:text-slate-300 transition-colors">Configurar Cookies</button></div>
       </div>
     </div>
   </footer>`;

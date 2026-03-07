@@ -94,6 +94,7 @@ export const Footer: React.FC = () => {
           <div className="flex gap-6 text-sm text-slate-500">
             <a href="/politica-de-privacidad/" className="hover:text-slate-300 transition-colors">Política de Privacidad</a>
             <a href="/terminos-de-servicio/" className="hover:text-slate-300 transition-colors">Términos de Servicio</a>
+            <button onClick={() => (window as any).openCookieSettings && (window as any).openCookieSettings()} className="hover:text-slate-300 transition-colors">Configurar Cookies</button>
           </div>
         </div>
       </div>
